@@ -1,15 +1,14 @@
 #include<iostream>
 
-using namespace std;
 
 int main(int argc, char* argv[])
 {
 	int a = 0;
 
-	cin >> a;
+	std::cin >> a;
 
-	cout << "The next number for the number " << a << " is " << a + 1 << "." << endl;
-	cout << "The previous number for the number " << a << " is " << a - 1 << "." << endl;
+	std::cout << "The next number for the number " << a << " is " << a + 1 << "." << std::endl;
+	std::cout << "The previous number for the number " << a << " is " << a - 1 << "." << std::endl;
 
 	return EXIT_SUCCESS;
 }
