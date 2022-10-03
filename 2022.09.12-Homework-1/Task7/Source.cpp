@@ -13,7 +13,6 @@ int main(int argc, char* argv[])
 	b = d;
 
 	std::cout << a <<" " << b << std::endl;
-	
 
 	return EXIT_SUCCESS;
 }

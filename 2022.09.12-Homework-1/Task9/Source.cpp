@@ -17,6 +17,5 @@ int main(int argc, char* argv[])
 
 	std::cout << s2 + s + cube + x +1 << std::endl;
 
-
 	return EXIT_SUCCESS;
 }

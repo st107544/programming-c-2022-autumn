@@ -1,6 +1,5 @@
 #include<iostream>
 
-
 int main(int argc, char* argv[])
 {
 	int ch1 = 0;
@@ -25,7 +24,6 @@ int main(int argc, char* argv[])
 	b = ch2 * 3600 + min2 * 60 + sek2;
 
 	std::cout << b - a << std::endl;
-
 
 	return EXIT_SUCCESS;
 }
