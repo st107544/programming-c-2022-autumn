@@ -1,0 +1,26 @@
+#include<iostream>
+
+int main(int argc, char* argv[])
+{
+	int year = 0;
+
+	std::cin >> year;
+
+	if (year % 4 == 0)
+	{
+		if ((year % 400 == 0) || (year % 100 != 0))
+		{
+			std::cout << "YES";
+		}
+		else
+		{
+			std::cout << "NO";
+		}
+	}
+	else
+	{
+		std::cout << "NO";
+	}
+
+	return EXIT_SUCCESS;
+}
