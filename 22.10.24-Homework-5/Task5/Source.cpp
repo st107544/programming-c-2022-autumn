@@ -48,5 +48,7 @@ int main(int argc, char* argv[])
 
 	std::cout << xa;
 
+	delete[] a;
+
 	return EXIT_SUCCESS;
 }

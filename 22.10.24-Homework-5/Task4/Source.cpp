@@ -33,5 +33,7 @@ int main(int argc, char* argv[])
 
 	std::cout << sum;
 
+	delete[] a;
+
 	return EXIT_SUCCESS;
 }

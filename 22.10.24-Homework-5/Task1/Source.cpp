@@ -9,7 +9,7 @@ int main(int args, char* argv[])
 	std::cin >> n;
 	int* a = new int[n] { 0 };
 
-	
+
 	for (int i = 0; i < n; i++)
 	{
 		std::cin >> a[i];
@@ -26,6 +26,8 @@ int main(int args, char* argv[])
 	}
 
 	std::cout << cnt;
+
+	delete[] a;
 
 	return EXIT_SUCCESS;
 }

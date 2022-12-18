@@ -31,8 +31,10 @@ int main(int argc, char* argv[])
 			a[i] = minz;
 		}
 
-		std::cout << a[i];" ";
+		std::cout << a[i] << " ";
 	}
+
+	delete[] a;
 
 	return EXIT_SUCCESS;
 }

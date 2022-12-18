@@ -30,5 +30,7 @@ int main(int argc, char* argv[])
 
 	std::cout << el << " " << num + 1;
 
+	delete[] a;
+
 	return EXIT_SUCCESS;
 }

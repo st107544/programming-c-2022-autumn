@@ -29,5 +29,7 @@ int main(int argc, char* argv[])
 
 	std::cout << num + 1;
 
+	delete[] a;
+
 	return EXIT_SUCCESS;
 }
