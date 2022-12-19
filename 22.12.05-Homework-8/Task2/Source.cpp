@@ -1,6 +1,5 @@
 #include<iostream>
 
-
 int fib(int n)
 	{
 		if (n == 0)
