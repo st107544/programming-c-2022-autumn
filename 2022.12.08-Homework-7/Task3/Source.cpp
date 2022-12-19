@@ -19,12 +19,26 @@ int main(int argc, char* argv[])
 			std::cin >> a[i][j];
 		}
 	}
-
-	for (int i = n - 1; i >= 0; --i)
+	int** b = new int* [n];
+	for (int i = 0; i < n; ++i)
 	{
-		for (int j = n - 1; j >= 0; --j)
+		b[i] = new int[n] {0};
+	}
+
+	for (int i = 1; i < (n+1); ++i)
+	{
+		for (int j = 1; j <(n+1); ++j)
+			{
+				b[i-1][j-1] = a[n-j][n-i];
+			}
+	}
+	
+
+	for (int i = 0; i < n; ++i)
+	{
+		for (int j = 0; j < n; ++j)
 		{
-			std::cout << a[j][i] << " ";
+			std::cout << b[i][j] << " ";
 		}
 
 		std::cout << std::endl;
@@ -35,6 +49,12 @@ int main(int argc, char* argv[])
 		delete[] a[i];
 	}
 	delete[] a;
+
+	for (int i = 0; i < n; ++i)
+	{
+		delete[] b[i];
+	}
+	delete[] b;
 
 	return EXIT_SUCCESS;
 }

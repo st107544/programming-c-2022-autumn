@@ -9,6 +9,7 @@ int main(int argc, char* argv[])
 	std::cin >> n >> m;
 
 	int** a = new int* [n];
+
 	for (int i = 0; i < n; ++i)
 	{
 		a[i] = new int[m] {0};
@@ -32,6 +33,7 @@ int main(int argc, char* argv[])
 		std::cout << sum << " ";
 		sum = 0;
 	}
+
 	std::cout << std::endl;
 
 	for (int i = 0; i < m; ++i)
@@ -44,6 +46,7 @@ int main(int argc, char* argv[])
 		std::cout << sum << " ";
 		sum = 0;
 	}
+
 	std::cout << std::endl << std::endl;
 
 	for (int i = 0; i < n; ++i)

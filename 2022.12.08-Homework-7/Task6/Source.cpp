@@ -37,13 +37,19 @@ int main(int argc, char* argv[])
 		}
 	}
 
+	int** b = new int* [n];
+
+	for (int i = 0; i < n; ++i)
+	{
+		b[i] = new int[m] {0};
+	}
+
 	for (int i = 0; i < n; ++i)
 	{
 		for (int j = 0; j < m; ++j)
 		{
-			std::cout << a[i][j] + a1[i][j] << " ";
+			b[i][j] = a[i][j] + a1[i][j];
 		}
-		std::cout << std::endl;
 	}
 
 	for (int i = 0; i < n; ++i)
@@ -59,6 +65,23 @@ int main(int argc, char* argv[])
 	}
 
 	delete[] a1;
+
+	for (int i = 0; i < n; ++i)
+	{
+		for (int j = 0; j < m; ++j)
+		{
+			std::cout << b[i][j] << " ";
+		}
+
+		std::cout << std::endl;
+	}
+
+	for (int i = 0; i < n; ++i)
+	{
+		delete[] b[i];
+	}
+
+	delete[] b;
 
 	return EXIT_SUCCESS;
 }
