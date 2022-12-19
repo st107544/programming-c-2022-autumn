@@ -6,18 +6,21 @@ int c(int n, int k)
 	{
 		return 0;
 	}
-	if (k == 0 || k == n)
+	if ((k == 0) || (k == n))
 	{
 		return 1;
 	}
 	return c(n - 1, k - 1) + c(n - 1, k);
 
 }
-int** buf(int n)
+
+int main(int argc, char* argv[])
 {
-	int** res = new int* [n];
-	for (int i = 0; i < n; ++i)
-	{
-		res[i] = 
-	}
+	int n = 0;
+	int k = 0;
+
+	std::cin >> n >> k;
+	std::cout << c(n, k);
+
+	return EXIT_SUCCESS;
 }

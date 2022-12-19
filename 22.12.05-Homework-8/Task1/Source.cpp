@@ -1,14 +1,14 @@
 #include <iostream>
 
-int mpos(int x, int y, int c, int z)
+int mpos(int x, int y, int w, int z)
 {
-	if (x * y * c * z == 0)
+	if (x * y * w * z == 0)
 
 	{
 		return 0;
 	}
 
-	return (1 + mpos(x - 1, y - 1, c - 1, z - 1));
+	return (1 + mpos(x - 1, y - 1, w - 1, z - 1));
 }
 
 int mneg(int a, int b, int c, int d)
@@ -24,21 +24,21 @@ int main(int argc, char* argv[])
 {
 	int x = 0;
 	int y = 0;
-	int c = 0;
+	int w = 0;
 	int z = 0;
 	std::cin >> x;
 	std::cin >> y;
-	std::cin >> c;
+	std::cin >> w;
 	std::cin >> z;
 
-	if ((x >= 0) && (y >= 0) && (c >= 0) && (z >= 0))
+	if ((x >= 0) && (y >= 0) && (w >= 0) && (z >= 0))
 	{
-		std::cout << mpos(x, y, c, z);
+		std::cout << mpos(x, y, w, z);
 	}
 
 	else
 	{
-		std::cout << mneg(x, y, c, z);
+		std::cout << mneg(x, y, w, z);
 	}
 	return EXIT_SUCCESS;
 }
