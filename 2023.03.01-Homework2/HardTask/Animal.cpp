@@ -13,33 +13,30 @@ Animaltype Animal::getType()
 
 void Animal::Workshop()
 {
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::uniform_int_distribution<> dist(1, 100000000);
 
-	type = Animaltype(dist(gen) % 4 + 1);
-	name = AnimalName(dist(gen) % 9+1);
+	type = Animaltype(rand() % 4 + 1);
+	name = AnimalName(rand() % 9 + 1);
 
 	switch (type)
 	{
 	case Mosquito :
 	{
-		skill = (dist(gen)%4+1);
+		skill = (rand()%4+1);
 		break;
 	}
 	case Donkey:
 	{
-		skill = (dist(gen) % 6 + 1);
+		skill = (rand() % 6 + 1);
 		break;
 	}
 	case Unicorn:
 	{
-		skill = (dist(gen) % 8 + 1);
+		skill = (rand() % 8 + 1);
 		break;
 	}
 	default:
 	{
-		skill = (dist(gen) % 10 + 1);
+		skill = (rand() % 10 + 1);
 	}
 	}
 }
