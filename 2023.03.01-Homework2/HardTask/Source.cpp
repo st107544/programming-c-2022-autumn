@@ -1,110 +1,96 @@
 #include <iostream>
 #include <string>
+#include "Animal.h"
 #include <random>
-
-Animaltype Animal::getType()
-{
-	return type;
-}
-int Animal::getSkill()
-{
-	return skill;
-}
-void Animal::setSkill(int skill)
-{
-	if (skill >= 0)
-	{
-		this->skill = skill;
-	}
-}
-void Animal::mighter()
-{
-	skill++;
-}
-
-
-enum Animaltype
-{
-	None = 0,
-	Mosquito = 1,
-	Donkey = 2,
-	Unicorn = 3,
-	Dragon = 4	
-};
-
-enum AnimalName
-{
-	Fifa = 0,
-	Bobs = 1,
-	Dodo = 2,
-	Boba = 3,
-	Biba = 4,
-	Rolf = 5,
-	Thanos = 6,
-	Goga = 7,
-	Vova = 8,
-	Arsi = 9
-};
-class Animal
-{
-private:
-	Animaltype type; //0-None, 1-Mosquito, 2-Donkey, 3-Unicorn, 4-Dragon
-	int skill;
-public:
-	AnimalName name;
-	
-	Animal(Animaltype type = None, AnimalName name = Thanos, int skill = 0)
-	{
-		this->type = type;
-		this->name = name;
-		this->skill = skill;
-	}
-
-	Animal(const Animal& beast)
-	{
-		this->type = beast.type;
-		this->name = beast.name;
-		this->skill = beast.skill;
-	}
-
-	~Animal()
-	{
-	}
-
-	Animaltype getType();
-	int getSkill ();
-	void setSkill(int skill);
-	void mighter();
-	void printInfo()
-	{
-		std::cout << "Name:" << name;
-		std::cout << "Type:" << type;
-		std::cout << "Skill:" << skill;
-	}
-}; 
 
 int main(int argc, char* argv[])
 {
-	Animal* animals1[100];
-	Animal** animals2 = new Animal * [100];
 
-	for (int i = 0; i < 100; ++i)
+	Animal** animals = new Animal * [10];
+
+	for (int i = 0; i < 10; ++i)
 	{
-		animals1[i] = new Animal();
-		animals2[i] = new Animal();
+		animals[i] = new Animal();
+		animals[i]->Workshop();
 	}
- 
 
-
-
-	for (int i = 0; i < 100; ++i)
+	int i = 0;
+	int counter = 10;
+	while (counter > 1)
 	{
-		delete animals1[i];
-		delete animals2[i];
-	}
-	delete[] animals2;
+		int j = i + 1;
+		while ((animals[j]->status == dead) && (j < 9))
+		{
+			++j;
+		}
 
+		if ((animals[i]->skill) > (animals[j]->skill))
+		{
+			animals[i]->skill == animals[i]->skill - animals[j]->skill;
+			if (animals[j]->status == alive)
+			{
+				animals[j]->status = dead;
+				counter--;
+			}
+		}
+
+		if ((animals[i]->skill) < (animals[j]->skill))
+		{
+			animals[j]->skill == animals[j]->skill - animals[i]->skill;
+			if (animals[i]->status == alive)
+			{
+				animals[i]->status = dead;
+				counter--;
+			}
+		}
+		if ((animals[i]->skill) = (animals[j]->skill))
+		{
+			if (animals[i]->status == alive)
+			{
+				animals[i]->status = dead;
+				counter--;
+			}
+			if (animals[j]->status == alive)
+			{
+				animals[j]->status = dead;
+				counter--;
+			}
+		}
+		if (i == 8)
+		{
+			i = 0;
+		}
+		else
+		{
+			i++;
+			while ((animals[i]->status == dead) && (i < 8))
+			{
+				i++;
+			}
+		}
+
+	}
+
+	if (counter == 0)
+	{
+		std::cout << "Everyone is dead";
+	}
+	else
+	{
+		for (int i = 0; i < 10; ++i)
+		{
+			if (animals[i]->status == alive)
+			{
+				std::cout << "---WINNER---" << std::endl;
+				animals[i]->printInfo();
+			}
+		}
+	}
+
+	for (int i = 0; i < 10; ++i)
+	{
+		delete animals[i];
+	}
+	delete[] animals;
 	return EXIT_SUCCESS;
 }
-
-
