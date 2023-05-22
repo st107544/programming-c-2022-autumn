@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
 	{
 		for (int j = 0; j < n - i - 1; j++)
 		{
-			if ((*a[j]).getDist() > (*a[j + 1]).getDist())
+			if ((a[j])->getDist() > (a[j + 1])->getDist())
 			{
 				std::swap(a[j], a[j + 1]);
 			}
@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
 
 	for (int i = 0; i < n; ++i)
 	{
-		std::cout << (*a[i]).getX() << " " << (*a[i]).getY() << std::endl;
+		std::cout << (a[i])->getX() << " " << (a[i])->getY() << std::endl;
 	}
 
 	for (int i = 0; i < n; ++i)
